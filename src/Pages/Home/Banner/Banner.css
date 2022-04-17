@@ -34,11 +34,11 @@
   color: #FF6363;
 }
 
-.right-area hr {
+hr {
   width: 150px;
-  height: 4px;
+  height: 3px;
   background-color: #125B50;
-  margin: 0 auto;
+  margin: 15px auto;
   border: 0;
   border-radius: 25px;
 }

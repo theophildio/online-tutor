@@ -1,10 +1,18 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Cource.css';
 
-const Cource = () => {
+const Cource = ({cource}) => {
+  const {image, title, details, fee} = cource;
   return (
-    <div>
-      <h3>Single Cource</h3>
+    <div className='cource'>
+      <img src={image} alt="" />
+      <h4>{title}</h4>
+      <p><small>{details}</small></p>
+      <h4>${fee}</h4>
+      <Link className='tutor-btn' to="/checkout">Enroll Now <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></Link>
     </div>
   );
 };

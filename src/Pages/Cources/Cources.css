@@ -1,0 +1,20 @@
+.cources-container {
+  width: 85%;
+  margin: 0 auto;
+  padding: 60px;
+}
+
+.cources-container h3 {
+  font-size: 50px;
+  color: #FF6363;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+.cources {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+}

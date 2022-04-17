@@ -2,6 +2,8 @@ import React from "react";
 import Feature from "./Feature/Feature";
 import "./Features.css";
 import iconFace from "../../../images/icons/facetoface.png";
+import iconCollaboration from "../../../images/icons/collaboration.png";
+import iconRewatch from "../../../images/icons/rewatch.png";
 
 const Features = () => {
 	const features = [
@@ -14,14 +16,14 @@ const Features = () => {
 		},
 		{
 			id: "2",
-			icon: `${iconFace}`,
+			icon: `${iconCollaboration}`,
 			title: "Share And Collaborate",
 			details:
 				"I can tutor your child and ensure they remain proficient in their core subjects, and enjoy learning along the way.",
 		},
 		{
 			id: "3",
-			icon: `${iconFace}`,
+			icon: `${iconRewatch}`,
 			title: "Rewatch Lessons",
 			details:
 				"I can tutor your child and ensure they remain proficient in their core subjects, and enjoy learning along the way.",
