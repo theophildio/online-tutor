@@ -4,9 +4,9 @@ import Nav from './Navbar/Nav';
 
 const Header = () => {
   return (
-    <div>
+    <header className='header'>
       <Nav></Nav>
-    </div>
+    </header>
   );
 };
 

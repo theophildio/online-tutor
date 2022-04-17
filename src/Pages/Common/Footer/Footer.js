@@ -3,9 +3,11 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <div>
-      <h4>This is footer</h4>
-    </div>
+    <footer className='footer'>
+      <div className="footer-container">
+        <p><small>&copy; All Rights Reserved by <span>Theophil Dio</span></small></p>
+      </div>
+    </footer>
   );
 };
 
