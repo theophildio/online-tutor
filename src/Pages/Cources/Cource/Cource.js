@@ -11,7 +11,7 @@ const Cource = ({cource}) => {
       <img src={image} alt="" />
       <h4>{title}</h4>
       <p><small>{details}</small></p>
-      <h4>${fee}</h4>
+      <h2>${fee}</h2>
       <Link className='tutor-btn' to="/checkout">Enroll Now <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></Link>
     </div>
   );
