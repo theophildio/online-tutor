@@ -1,0 +1,37 @@
+.topbar {
+  background-color: #125B50;
+  color: #FAF5E4;
+}
+
+.topbar-container {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-left {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.top-left span {
+  margin: 0 10px;
+}
+
+.top-right a {
+  text-decoration: none;
+  color: #FAF5E4;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.top-right a:last-child {
+  margin-right: 0;
+}
+
+.top-right a:hover {
+  color: #FF6363;
+}
