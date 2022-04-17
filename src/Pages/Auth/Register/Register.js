@@ -1,14 +1,12 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-import React from "react";
-import "./Login.css";
-import { Link } from "react-router-dom";
+import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Login = () => {
-	return (
-		<div className="login-container">
-			<h3>Login</h3>
+const Register = () => {
+  return (
+    <div className="login-container">
+			<h3>Register</h3>
 			<div className="login-area">
 				<form className="contact-form">
 					<input
@@ -25,8 +23,8 @@ const Login = () => {
 						placeholder="Your password"
 						required
 					/>
-					<input className="tutor-btn" type="submit" value="Log in" />
-          <p><small>No account? <Link className="signup" to="/register">Create one</Link></small></p>
+					<input className="tutor-btn" type="submit" value="Create account" />
+          <p><small>Already have an account? <Link className="signup" to="/login">Log in</Link></small></p>
 				</form>
 				<div className="other-login">
 					<div className="divider">
@@ -41,7 +39,7 @@ const Login = () => {
 				</div>
 			</div>
 		</div>
-	);
+  );
 };
 
-export default Login;
+export default Register;
