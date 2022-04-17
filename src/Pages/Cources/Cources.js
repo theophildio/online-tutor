@@ -6,7 +6,7 @@ import './Cources.css';
 const Cources = () => {
   const [cources] = useCources();
   return (
-    <div className='cources-container'>
+    <section className='cources-container'>
       <h3>Cources</h3>
       <hr />
       <div className="cources">
@@ -17,7 +17,7 @@ const Cources = () => {
           ></Cource> )
         }
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -3,6 +3,7 @@ import Cources from '../Cources/Cources';
 import Banner from './Banner/Banner';
 import Features from './Features/Features';
 import './Home.css';
+import Ratings from './Ratings/Ratings';
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Banner></Banner>
       <Features></Features>
       <Cources></Cources>
+      <Ratings></Ratings>
     </main>
   );
 };
