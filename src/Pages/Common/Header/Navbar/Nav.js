@@ -3,8 +3,16 @@ import './Nav.css';
 import Topbar from './Topbar';
 import Logo from '../../../../images/logo.png';
 import CustomLink from './CustomLink';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Nav = () => {
+  const [user] = useAuthState(auth);
+
+  const handelLogOut = () => {
+    signOut(auth);
+  }
   return (
     <div className='nav-container'>
       <Topbar></Topbar>
@@ -17,7 +25,13 @@ const Nav = () => {
           <CustomLink to="/cources">Cources</CustomLink>
           <CustomLink to="/aboutme">About me</CustomLink>
           <CustomLink to="/blogs">Blogs</CustomLink>
-          <CustomLink to="/login">Login</CustomLink>
+          <CustomLink to="/register">Register</CustomLink>
+          {
+            user ?
+            <button onClick={handelLogOut} className='logout'>Log out</button>
+            :
+            <CustomLink to="/login">Login</CustomLink>
+            }
         </div>
       </nav>
     </div>

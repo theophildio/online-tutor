@@ -11,3 +11,17 @@
   display: flex;
   align-items: center;
 }
+
+.logout {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  margin-right: 0;
+  background-color: #FF6363;
+  color: #FAF5E4;
+  padding: 8px 24px;
+  border: 0;
+  border-radius: 25px;
+  transition: 0.5s;
+  cursor: pointer;
+}
