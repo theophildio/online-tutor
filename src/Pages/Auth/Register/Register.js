@@ -1,7 +1,7 @@
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
 
@@ -50,8 +50,8 @@ const Register = () => {
 						required
 					/>
 					<input className="tutor-btn" type="submit" value="Create account" />
-          <p><small>Already have an account?</small> <span onClick={navigateToLogin} className="signup">Log in</span></p>
 				</form>
+				<p><small>Already have an account?</small> <Link to="/login" onClick={navigateToLogin} className="signup">Log in</Link></p>
 				<div className="other-login">
 					<div className="divider">
 						<hr />

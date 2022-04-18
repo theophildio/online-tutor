@@ -3,7 +3,7 @@ import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import React from "react";
 import "./Login.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from "../../../firebase.init";
 
@@ -52,8 +52,8 @@ const Login = () => {
 						required
 					/>
 					<input className="tutor-btn" type="submit" value="Log in" />
-          <p><small>No account? <span onClick={navigateToRegister} className="signup">Register</span></small></p>
 				</form>
+				<p><small>No account? <Link to="/register" onClick={navigateToRegister} className="signup">Register</Link></small></p>
 				<div className="other-login">
 					<div className="divider">
 						<hr />

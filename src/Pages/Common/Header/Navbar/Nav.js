@@ -25,7 +25,6 @@ const Nav = () => {
           <CustomLink to="/cources">Cources</CustomLink>
           <CustomLink to="/aboutme">About me</CustomLink>
           <CustomLink to="/blogs">Blogs</CustomLink>
-          <CustomLink to="/register">Register</CustomLink>
           {
             user ?
             <button onClick={handelLogOut} className='logout'>Log out</button>
