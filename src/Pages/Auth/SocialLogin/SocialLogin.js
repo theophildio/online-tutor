@@ -11,19 +11,20 @@ const SocialLogin = () => {
   const [signInWithFacebook, userFb, loadingFb, errorFb] = useSignInWithFacebook(auth);
   const navigate = useNavigate();
 
-  let errorMsg;
+  let errorGoogleMsg;
+  let errorFBMsg;
 
   // Error msg for Google
   if (error) {
-    errorMsg = <div>
+    errorGoogleMsg = <div>
         <p style={{color: 'crimson', margitBottom: '10px'}}>Error: {error.message}</p>
       </div>
     
   }
   // Error msg for Facebook
   if (errorFb) {
-    errorMsg = <div>
-        <p style={{color: 'crimson', margitBottom: '10px'}}>Error: {error.message}</p>
+    errorFBMsg = <div>
+        <p style={{color: 'crimson', margitBottom: '10px'}}>Error: {errorFb.message}</p>
       </div>
     
   }
@@ -46,7 +47,8 @@ const SocialLogin = () => {
 				<hr />
 			</div>
 			<div className="social-logins">
-      {errorMsg}
+      {errorGoogleMsg}
+      {errorFBMsg}
 				<button onClick={() => signInWithGoogle()} className="tutor-btn">
 					<FontAwesomeIcon
 						className="social-icon"

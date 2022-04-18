@@ -11,6 +11,15 @@ const Login = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 
+	let errormsg;
+
+	if (error) {
+    errormsg = <div>
+        <p style={{color: 'crimson', margitBottom: '10px'}}>Error: {error.message}</p>
+      </div>
+    
+  }
+
 	let from = location.state?.from?.pathname || "/";
 
 	if (user) {
@@ -49,6 +58,7 @@ const Login = () => {
 					/>
 					<input className="tutor-btn" type="submit" value="Log in" />
 				</form>
+				{errormsg}
 				<p>
 					<small>
 						No account?{" "}

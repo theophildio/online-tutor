@@ -18,7 +18,7 @@ const Register = () => {
 		navigate('/login');
 	}
 	if(user) {
-		navigate('/login');
+		navigate('/checkout');
 	}
 
 	const handleRegister = (e) => {
