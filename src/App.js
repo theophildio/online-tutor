@@ -12,6 +12,7 @@ import Register from "./Pages/Auth/Register/Register";
 import NotFound from "./Pages/NotFound/NotFound";
 import Checkout from "./Pages/Checkout/Checkout";
 import RequireAuth from "./Pages/Auth/RequireAuth/RequireAuth";
+import AddedCource from "./Pages/AddedCource/AddedCource";
 
 function App() {
 	return (

@@ -1,0 +1,9 @@
+.cource-img img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.cource-infos p {
+  color: #125B50;
+  font-size: 18px;
+}

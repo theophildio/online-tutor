@@ -4,15 +4,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Cource.css';
 
-const Cource = ({cource}) => {
+const Cource = ({cource, handleEnrollButton}) => {
   const {image, title, details, fee} = cource;
+
   return (
     <div className='cource'>
       <img src={image} alt="" />
       <h4>{title}</h4>
       <p><small>{details}</small></p>
       <h2>${fee}</h2>
-      <Link className='tutor-btn' to="/checkout">Enroll Now <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></Link>
+      <Link className='tutor-btn' to="/checkout" onClick={() => handleEnrollButton(cource)}>Enroll Now <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></Link>
     </div>
   );
 };
