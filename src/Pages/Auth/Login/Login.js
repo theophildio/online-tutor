@@ -3,14 +3,40 @@ import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import React from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from "../../../firebase.init";
 
 const Login = () => {
+	const [
+		signInWithEmailAndPassword,
+		user,
+		loading,
+		error,
+	] = useSignInWithEmailAndPassword(auth);
+	const navigate = useNavigate();
+
+	const handleLogin = e => {
+		e.preventDefault();
+		const email = e.target.email.value;
+		const password = e.target.password.value;
+		signInWithEmailAndPassword(email, password);
+	}
+
+	const navigateToRegister = () => {
+		navigate('/register');
+	}
+
+	if(user) {
+		navigate('/checkout');
+	}
+
+
 	return (
 		<div className="login-container">
 			<h3>Login</h3>
 			<div className="login-area">
-				<form className="contact-form">
+				<form onSubmit={handleLogin} className="contact-form">
 					<input
 						type="email"
 						name="email"
@@ -26,7 +52,7 @@ const Login = () => {
 						required
 					/>
 					<input className="tutor-btn" type="submit" value="Log in" />
-          <p><small>No account? <Link className="signup" to="/register">Create one</Link></small></p>
+          <p><small>No account? <span onClick={navigateToRegister} className="signup">Register</span></small></p>
 				</form>
 				<div className="other-login">
 					<div className="divider">

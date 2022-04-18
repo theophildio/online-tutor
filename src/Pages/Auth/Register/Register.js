@@ -1,14 +1,40 @@
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
+
 
 const Register = () => {
+	const [
+		createUserWithEmailAndPassword,
+		user,
+		loading,
+		error,
+	] = useCreateUserWithEmailAndPassword(auth);
+
+	const navigate = useNavigate();
+
+	const navigateToLogin = () => {
+		navigate('/login');
+	}
+
+	const handleRegister = (e) => {
+		e.preventDefault();
+		const email = e.target.email.value;
+		const password = e.target.password.value;
+		createUserWithEmailAndPassword(email, password);
+	}
+
+	if(user) {
+		navigate('/login');
+	}
+
   return (
     <div className="login-container">
 			<h3>Register</h3>
 			<div className="login-area">
-				<form className="contact-form">
+				<form onSubmit={handleRegister} className="contact-form">
 					<input
 						type="email"
 						name="email"
@@ -24,7 +50,7 @@ const Register = () => {
 						required
 					/>
 					<input className="tutor-btn" type="submit" value="Create account" />
-          <p><small>Already have an account? <Link className="signup" to="/login">Log in</Link></small></p>
+          <p><small>Already have an account?</small> <span onClick={navigateToLogin} className="signup">Log in</span></p>
 				</form>
 				<div className="other-login">
 					<div className="divider">
