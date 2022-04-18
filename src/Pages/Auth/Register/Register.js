@@ -1,8 +1,7 @@
-import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 
 const Register = () => {
@@ -18,16 +17,16 @@ const Register = () => {
 	const navigateToLogin = () => {
 		navigate('/login');
 	}
+	if(user) {
+		navigate('/login');
+	}
 
 	const handleRegister = (e) => {
 		e.preventDefault();
+		const displayName = e.target.name.value;
 		const email = e.target.email.value;
 		const password = e.target.password.value;
 		createUserWithEmailAndPassword(email, password);
-	}
-
-	if(user) {
-		navigate('/login');
 	}
 
   return (
@@ -35,6 +34,13 @@ const Register = () => {
 			<h3>Register</h3>
 			<div className="login-area">
 				<form onSubmit={handleRegister} className="contact-form">
+					<input
+						type="text"
+						name="name"
+						id="name"
+						placeholder="Your name"
+						required
+					/>
 					<input
 						type="email"
 						name="email"
@@ -53,15 +59,7 @@ const Register = () => {
 				</form>
 				<p><small>Already have an account?</small> <Link to="/login" onClick={navigateToLogin} className="signup">Log in</Link></p>
 				<div className="other-login">
-					<div className="divider">
-						<hr />
-						<span>or use one of these options</span>
-						<hr />
-					</div>
-					<div className="social-logins">
-						<button className="tutor-btn"><FontAwesomeIcon className="social-icon" icon={faGoogle}></FontAwesomeIcon> Google</button>
-						<button className="tutor-btn"><FontAwesomeIcon className="social-icon" icon={faFacebook}></FontAwesomeIcon> Facebook</button>
-					</div>
+					<SocialLogin></SocialLogin>
 				</div>
 			</div>
 		</div>
