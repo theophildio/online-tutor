@@ -18,3 +18,17 @@
   align-items: center;
   margin: 40px 0;
 }
+
+/* Responsive */
+@media only screen and (max-width: 480px) {
+  .cources-container {
+    padding-bottom: 20px;
+  }
+  .cources-container h3 {
+    margin-top: 0;
+  }
+  .cources {
+    margin-top: 20px;
+    flex-direction: column;
+  }
+}

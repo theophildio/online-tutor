@@ -36,3 +36,10 @@
 .top-right a:hover {
   color: #FF6363;
 }
+
+/* Responsive */
+@media only screen and (max-width: 480px) {
+  .topbar {
+    display: none;
+  }
+}

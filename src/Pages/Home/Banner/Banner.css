@@ -1,6 +1,6 @@
 .banner {
   background-color: #FAF5E4;
-  height: 85vh;
+  min-height: 85vh;
   overflow: hidden;
 }
 
@@ -65,6 +65,38 @@ hr {
 .tutor-btn:hover {
   background-color: #125B50;
   color: #FAF5E4;
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 480px) {
+  .banner {
+    padding-bottom: 25px;
+  }
+  .banner-content {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+  .left-area {
+    display: flex;
+    justify-content: center;
+  }
+  .banner-content .left-area img {
+    width: 70%;
+  }
+  .right-area h2 {
+    font-size: 28px;
+  }
+  .right-area h1 {
+    font-size: 80px;
+    line-height: 100px;
+  }
+  .right-area p {
+    margin: 10px 0;
+  }
+  .tutor-btn {
+    margin-top: 20px;
+  }
 }
 
 
