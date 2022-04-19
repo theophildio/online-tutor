@@ -2,15 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import "./AddedCource.css";
-import { deleteCource } from "../../LocalStorage/LocalStorage";
-
 
 const AddedCource = ({cource}) => {
-	const {id, image, title, fee} = cource;
-	
-	const removeItem = id => {
-		deleteCource(id);
-	}
+	const {image, title, fee} = cource;
 	
 	return (
 		<div>
@@ -26,7 +20,7 @@ const AddedCource = ({cource}) => {
 						</p>
 					</div>
 					<div className="remove-btn">
-						<FontAwesomeIcon onClick={() => removeItem(id)} className="remove-icon" icon={faTrash}></FontAwesomeIcon>
+						<FontAwesomeIcon className="remove-icon" icon={faTrash}></FontAwesomeIcon>
 					</div>
 				</div>
 			</div>
