@@ -60,3 +60,13 @@
   color: #F8B400;
   cursor: pointer;
 }
+
+/* Responsive */
+@media only screen and (max-width: 480px) {
+  .login-area {
+    width: 100%;
+  }
+  .divider span {
+    font-size: 10px;
+  }
+}
