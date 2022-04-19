@@ -1,11 +1,13 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import useCart from "../../Hooks/useCart";
 import useCources from "../../Hooks/useCources";
 import AddedCource from "../AddedCource/AddedCource";
 import "./Checkout.css";
 
 const Checkout = () => {
 	const [cources] = useCources();
+	const [cart] = useCart(cources);
+
 	return (
 		<div className="checkout">
 			<h3>Checkout</h3>
@@ -47,10 +49,14 @@ const Checkout = () => {
 				</div>
 				<div className="added-cources">
 					<h4>Your cources :</h4>
-					<AddedCource></AddedCource>
+					{
+						cart.map(cource => <AddedCource
+							key={cource.id}
+							cource={cource}
+						></AddedCource>)
+					}
 				</div>
 			</div>
-			<Outlet></Outlet>
 		</div>
 	);
 };

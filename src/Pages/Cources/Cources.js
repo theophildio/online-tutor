@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import useCources from '../../Hooks/useCources';
 import Cource from './Cource/Cource';
 import './Cources.css';

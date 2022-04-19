@@ -1,13 +1,5 @@
 const addToDb = (id) => {
-	let cart;
-
-	// Get cart
-	const addedCources = localStorage.getItem("cources");
-	if (addedCources) {
-		cart = JSON.parse(addedCources);
-	} else {
-		cart = {};
-	}
+	let cart = getCourcesFromDb();
 
 	// Add quantity
 	const quantity = cart[id];
@@ -22,8 +14,23 @@ const addToDb = (id) => {
 	localStorage.setItem("cources", JSON.stringify(cart));
 };
 
+// Get cources function
+const getCourcesFromDb = () => {
+	let cart;
+	// Get cart
+	const addedCources = localStorage.getItem("cources");
+	if (addedCources) {
+		cart = JSON.parse(addedCources);
+	} else {
+		cart = {};
+	}
+	return cart;
+};
+
+// Delete items
 const deleteCource = (id) => {
 	const addedCources = localStorage.getItem("cart");
+	
 	if (addedCources) {
 		const cart = JSON.parse(addedCources);
 		if (id in cart) {
@@ -34,4 +41,4 @@ const deleteCource = (id) => {
 	}
 };
 
-export { addToDb, deleteCource };
+export { addToDb, getCourcesFromDb, deleteCource };
