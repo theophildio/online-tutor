@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import useCart from "../../Hooks/useCart";
 import useCources from "../../Hooks/useCources";
 import AddedCource from "../AddedCource/AddedCource";
@@ -7,6 +8,12 @@ import "./Checkout.css";
 const Checkout = () => {
 	const [cources] = useCources();
 	const [cart] = useCart(cources);
+	const navigate = useNavigate();
+	const handleCheckoutForm = (e) => {
+		e.preventDefault();
+		navigate('/home');
+		return alert('Thank you for your order!!!');
+	}
 
 	return (
 		<div className="checkout">
@@ -15,7 +22,7 @@ const Checkout = () => {
 			<div className="checkout-container">
 				<div className="checkout-form">
 					<h4>Fill up the checkout form</h4>
-					<form className="contact-form">
+					<form onSubmit={handleCheckoutForm} className="contact-form">
 						<input
 							type="text"
 							name="name"
