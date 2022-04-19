@@ -3,9 +3,14 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Cource.css';
+import { addToDb } from '../../../LocalStorage/LocalStorage';
 
-const Cource = ({cource, handleEnrollButton}) => {
-  const {image, title, details, fee} = cource;
+const Cource = ({cource}) => {
+  const {id, image, title, details, fee} = cource;
+
+  const addToLocalStorage = (id) => {
+    addToDb(id);
+  }
 
   return (
     <div className='cource'>
@@ -13,7 +18,7 @@ const Cource = ({cource, handleEnrollButton}) => {
       <h4>{title}</h4>
       <p><small>{details}</small></p>
       <h2>${fee}</h2>
-      <Link className='tutor-btn' to="/checkout" onClick={() => handleEnrollButton(cource)}>Enroll Now <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></Link>
+      <Link className='tutor-btn' to="/checkout" onClick={() => addToLocalStorage(id)}>Enroll Now <FontAwesomeIcon icon={faCartShopping}></FontAwesomeIcon></Link>
     </div>
   );
 };

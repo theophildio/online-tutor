@@ -1,19 +1,26 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import './AddedCource.css';
+import "./AddedCource.css";
 
-const AddedCource = ({cource}) => {
-  const {image, title, fee} = cource;
+const AddedCource = () => {
+	
 	return (
 		<div>
 			<div className="cource-details">
 				<div className="cource-img">
-					<img src={image} alt="" />
+					<img src="" alt="" />
 				</div>
 				<div className="cource-infos">
-					<p>{title}</p>
-					<p>
-						<small>${fee}</small>
-					</p>
+					<div className="infos">
+						<p>{}</p>
+						<p>
+							<>${}</>
+						</p>
+					</div>
+					<div className="remove-btn">
+						<FontAwesomeIcon className="remove-icon" icon={faTrash}></FontAwesomeIcon>
+					</div>
 				</div>
 			</div>
 		</div>

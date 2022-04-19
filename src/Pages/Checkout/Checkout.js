@@ -47,9 +47,7 @@ const Checkout = () => {
 				</div>
 				<div className="added-cources">
 					<h4>Your cources :</h4>
-					{
-            cources.map(cource => <AddedCource key={cource.id} cource={cource}></AddedCource>)
-          }
+					<AddedCource></AddedCource>
 				</div>
 			</div>
 			<Outlet></Outlet>

@@ -5,12 +5,6 @@ import './Cources.css';
 
 const Cources = () => {
   const [cources] = useCources();
-  const [checkout, setCheckout] = useState([]);
-
-  const handleEnrollButton = (cource) => {
-    const newCheckout = [...checkout, cource];
-    setCheckout(newCheckout)
-  }
 
   return (
     <section className='cources-container'>
@@ -21,7 +15,6 @@ const Cources = () => {
           cources.map( cource => <Cource
             key={cource.id}
             cource={cource}
-            handleEnrollButton={handleEnrollButton}
           ></Cource>
           )
         }
